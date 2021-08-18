@@ -1,0 +1,137 @@
+/* Start Variables */
+:root {
+    --selected: #03A9F4;
+    --normal: #242424;
+    --li-diff: #2A2A2A;
+    --li-color: #727272;
+    --order-border: #7C7C7C;
+    --order-border-selected: #68CBF8;
+    --white: #FFF;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1300px;
+  }
+}
+/* End Global Rules */
+/* Start Pricing */
+.pricing .container .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(310px,1fr));
+    margin-top: 100px;
+}
+.cards .card {
+    background-color: var(--normal);
+    padding: 60px 0 40px;
+    text-align: center;
+    color: var(--white);
+    border-right: .25px solid #393939;
+    transition: transform .3s , background-color .6s;
+}
+.cards .card:hover {
+    background-color: var(--selected);
+    transform: scale(1.1);
+    z-index: 3;
+}
+.cards .card:hover .features li {
+    color: var(--white);
+    border-top: .1px solid #35BAF6;
+    background-color: var(--selected) !important;
+}
+.cards .card:hover .order button {
+    border-color: var(--order-border-selected);
+}
+.cards .card:hover .type {
+    font-size: 40px;
+}
+.cards .card:hover .price {
+    font-size: 40px;
+}
+.cards .card .type {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    transition: font-size .3s;
+}
+.cards .card .price {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    transition: font-size .3s;
+}
+.cards .card .price span {
+    font-size: 16px;
+    position: relative;
+}
+.cards .card .price .dollar {
+    bottom: 15px;
+    right: -5px;
+}
+.cards .card .price .time {
+    left: -5px;
+}
+.cards .card .features li {
+    padding: 25px;
+    border-top: .1px solid #393939;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--li-color);
+}
+.cards .card .features li:nth-child(2),
+.cards .card .features li:nth-child(4) {
+    background-color: var(--li-diff) ;
+}
+.cards .card .order {
+    margin-top: 35px;
+}
+.cards .card .order button {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    padding: 15px;
+    border: 1px solid var(--order-border);
+    cursor: pointer;
+    transition: background-color .5s;
+}
+.cards .card .order button:hover {
+    background-color: black;
+}
+/* End Pricing */
